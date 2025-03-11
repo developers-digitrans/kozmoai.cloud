@@ -56,7 +56,7 @@ const FAQSection = ({
   };
 
   return (
-    <section className="py-20 px-6 md:px-12 bg-[#0B0B0B]">
+    <section className="py-20 px-6 md:px-12 bg-gradient-to-r from-purple-900 via-pink-800 to-purple-900">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16">
           <motion.h2

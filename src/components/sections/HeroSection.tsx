@@ -73,9 +73,25 @@ const HeroSection = ({
   },
 }: HeroSectionProps) => {
   return (
-    <section className="relative w-full min-h-[800px] flex items-center justify-center overflow-hidden bg-[#0B0B0B] py-16">
+    <section className="relative w-full min-h-[800px] flex items-center justify-center overflow-hidden bg-gradient-to-r from-purple-900 via-pink-800 to-purple-900 py-16">
+      {/* Video Background */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <video
+          className="absolute w-full h-full object-cover"
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+        >
+          <source src="/videos/kozmo.mp4" type="video/mp4" />
+        </video>
+        {/* Dark overlay for better text readability */}
+        <div className="absolute inset-0 bg-[#0B0B0B]/70 z-10"></div>
+      </div>
+
       {/* Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden z-20">
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-purple-600/10 rounded-full filter blur-[120px] opacity-60"></div>
         <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-pink-500/10 rounded-full filter blur-[100px] opacity-50"></div>
         <div className="absolute top-1/3 left-1/4 w-[300px] h-[300px] bg-blue-500/10 rounded-full filter blur-[80px] opacity-40"></div>
@@ -99,7 +115,7 @@ const HeroSection = ({
       </div>
 
       {/* Content Container */}
-      <div className="relative z-20 max-w-7xl mx-auto px-6 md:px-8 flex flex-col items-center justify-center text-center">
+      <div className="relative z-30 max-w-7xl mx-auto px-6 md:px-8 flex flex-col items-center justify-center text-center">
         <motion.div
           className="w-full max-w-4xl"
           initial={{ opacity: 0, y: 20 }}

@@ -15,7 +15,7 @@ export default function WorkflowBuilderSection(
     "Don't let boilerplate code slow you down. Visual data flows, reusable components, and rapid iteration let you focus on creating AI magic.";
 
   return (
-    <section className="py-20 px-6 md:px-12 bg-[#0B0B0B] relative z-20">
+    <section className="py-20 px-6 md:px-12 bg-gradient-to-r from-purple-900 via-pink-800 to-purple-900 relative z-20">
       <div className="max-w-7xl mx-auto">
         {/* Main Heading */}
         <div className="mb-16">
@@ -134,13 +134,29 @@ export default function WorkflowBuilderSection(
                   { name: "Composio", icon: "⚙️" },
                   { name: "Notion", icon: "📝" },
                 ].map((tool, index) => (
-                  <div
+                  <motion.div
                     key={index}
                     className="bg-[#111111] rounded-full border border-purple-500/20 px-4 py-2 flex items-center hover:border-purple-500/50 transition-all duration-300 cursor-pointer"
+                    animate={{
+                      y: [0, -5, 0],
+                      boxShadow: [
+                        "0 2px 4px -1px rgba(139, 92, 246, 0.1)",
+                        "0 4px 6px -1px rgba(139, 92, 246, 0.2)",
+                        "0 2px 4px -1px rgba(139, 92, 246, 0.1)",
+                      ],
+                    }}
+                    transition={{
+                      duration: 3,
+                      repeat: Infinity,
+                      repeatType: "reverse",
+                      ease: "easeInOut",
+                      delay: index * 0.05,
+                    }}
+                    whileHover={{ scale: 1.05, y: -3 }}
                   >
                     <span className="mr-2">{tool.icon}</span>
                     <span className="text-white text-sm">{tool.name}</span>
-                  </div>
+                  </motion.div>
                 ))}
               </motion.div>
             </div>
@@ -187,118 +203,31 @@ export default function WorkflowBuilderSection(
                   { name: "Serper", icon: "🔎" },
                   { name: "Cohere", icon: "🧩" },
                 ].map((tool, index) => (
-                  <div
+                  <motion.div
                     key={index}
                     className="bg-[#111111] rounded-full border border-purple-500/20 px-4 py-2 flex items-center hover:border-purple-500/50 transition-all duration-300 cursor-pointer"
+                    animate={{
+                      y: [0, -5, 0],
+                      boxShadow: [
+                        "0 2px 4px -1px rgba(139, 92, 246, 0.1)",
+                        "0 4px 6px -1px rgba(139, 92, 246, 0.2)",
+                        "0 2px 4px -1px rgba(139, 92, 246, 0.1)",
+                      ],
+                    }}
+                    transition={{
+                      duration: 3,
+                      repeat: Infinity,
+                      repeatType: "reverse",
+                      ease: "easeInOut",
+                      delay: index * 0.05,
+                    }}
+                    whileHover={{ scale: 1.05, y: -3 }}
                   >
                     <span className="mr-2">{tool.icon}</span>
                     <span className="text-white text-sm">{tool.name}</span>
-                  </div>
+                  </motion.div>
                 ))}
               </motion.div>
-            </div>
-          </div>
-        </div>
-
-        {/* Limitless Control Section */}
-        <div className="mb-20">
-          <motion.h3
-            className="text-3xl font-bold text-white mb-4"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            Limitless Control
-          </motion.h3>
-          <motion.p
-            className="text-lg text-gray-300 mb-8"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-          >
-            Use Python to customize anything and everything
-          </motion.p>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* API Integration Card */}
-            <div className="bg-[#111111] rounded-xl border border-purple-500/20 p-6 hover:shadow-lg hover:shadow-purple-500/10 transition-all duration-300">
-              <div className="bg-purple-900/20 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
-                <svg
-                  className="w-6 h-6 text-purple-500"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                  />
-                </svg>
-              </div>
-              <h4 className="text-xl font-semibold text-white mb-2">
-                API Integration
-              </h4>
-              <p className="text-gray-300 text-sm">
-                A flow designed to guide developers through the process of
-                integrating APIs seamlessly.
-              </p>
-            </div>
-
-            {/* Code Debugger Card */}
-            <div className="bg-[#111111] rounded-xl border border-purple-500/20 p-6 hover:shadow-lg hover:shadow-purple-500/10 transition-all duration-300">
-              <div className="bg-purple-900/20 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
-                <svg
-                  className="w-6 h-6 text-purple-500"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"
-                  />
-                </svg>
-              </div>
-              <h4 className="text-xl font-semibold text-white mb-2">
-                Code Debugger
-              </h4>
-              <p className="text-gray-300 text-sm">
-                A chatbot that helps developers identify bugs in their code and
-                provides solutions to fix them.
-              </p>
-            </div>
-
-            {/* Content Search Card */}
-            <div className="bg-[#111111] rounded-xl border border-purple-500/20 p-6 hover:shadow-lg hover:shadow-purple-500/10 transition-all duration-300">
-              <div className="bg-purple-900/20 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
-                <svg
-                  className="w-6 h-6 text-purple-500"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                  />
-                </svg>
-              </div>
-              <h4 className="text-xl font-semibold text-white mb-2">
-                Content Search
-              </h4>
-              <p className="text-gray-300 text-sm">
-                A flow designed to search across multiple repositories and
-                resources to retrieve answers.
-              </p>
             </div>
           </div>
         </div>
@@ -342,9 +271,25 @@ export default function WorkflowBuilderSection(
               },
               { name: "OpenAI", description: "" },
             ].map((agent, index) => (
-              <div
+              <motion.div
                 key={index}
                 className={`bg-gradient-to-br ${index === 1 ? "from-pink-600/20 to-purple-500/20 border-pink-500/30" : "from-purple-900/10 to-purple-500/10 border-purple-500/20"} rounded-xl border p-4 hover:shadow-lg hover:shadow-purple-500/10 transition-all duration-300`}
+                animate={{
+                  y: [0, -8, 0],
+                  boxShadow: [
+                    "0 4px 6px -1px rgba(139, 92, 246, 0.1)",
+                    "0 10px 15px -3px rgba(139, 92, 246, 0.2)",
+                    "0 4px 6px -1px rgba(139, 92, 246, 0.1)",
+                  ],
+                }}
+                transition={{
+                  duration: 6,
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                  ease: "easeInOut",
+                  delay: index * 0.3,
+                }}
+                whileHover={{ y: -12, scale: 1.02 }}
               >
                 <div className="flex items-center mb-3">
                   <div className="bg-purple-900/20 w-8 h-8 rounded-full flex items-center justify-center mr-2">
@@ -370,7 +315,7 @@ export default function WorkflowBuilderSection(
                 {agent.description && (
                   <p className="text-gray-300 text-sm">{agent.description}</p>
                 )}
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>

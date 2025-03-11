@@ -25,7 +25,7 @@ function Home() {
   }, []);
 
   return (
-    <div className="w-screen min-h-screen bg-[#0B0B0B] relative overflow-x-hidden">
+    <div className="w-screen min-h-screen bg-gradient-to-r from-purple-900 via-pink-800 to-purple-900 relative overflow-x-hidden">
       {/* Background Effects */}
       <ParticleBackground
         colors={["#623CEA", "#A82DC1", "#BB86FC", "#C51162"]}
@@ -99,7 +99,7 @@ function Home() {
           />
 
           {/* Testimonials Section */}
-          <section className="py-20 px-6 md:px-12 max-w-7xl mx-auto bg-gradient-to-br from-purple-900/10 to-pink-500/10 rounded-3xl my-12">
+          <section className="py-20 px-6 md:px-12 max-w-7xl mx-auto bg-gradient-to-r from-purple-900/50 via-pink-800/50 to-purple-900/50 rounded-3xl my-12">
             <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-16">
               What Our Users Say
             </h2>
@@ -175,7 +175,7 @@ function Home() {
           {/* CTA Section removed */}
 
           {/* Footer */}
-          <footer className="bg-[#0A0A0A] border-t border-purple-900/20 py-12 px-6 md:px-12 relative z-20">
+          <footer className="bg-gradient-to-r from-purple-900/80 via-pink-800/80 to-purple-900/80 border-t border-purple-400/20 py-12 px-6 md:px-12 relative z-20">
             <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
               <div className="md:col-span-1">
                 <div className="text-white font-bold text-2xl mb-4">

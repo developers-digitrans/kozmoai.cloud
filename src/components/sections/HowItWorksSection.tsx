@@ -20,35 +20,25 @@ const HowItWorksSection = ({
     {
       title: "1. Drag & Drop Components",
       description:
-        "Select from our library of pre-built components and drag them onto the canvas.",
-      image:
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+        "Select from our library of pre-built components, including integrations with popular AI agents like Mistral AI, Groq, Hugging Face, OpenAI, Ollama, Nvidia, and more. Drag these components onto the canvas to visually design and orchestrate your AI workflows. No coding required!",
+      image: "/images/workflow2.png",
     },
     {
       title: "2. Connect Components",
       description:
-        "Create connections between components to define the flow of data and operations.",
-      image:
-        "https://images.unsplash.com/photo-1558655146-d09347e92766?w=800&q=80",
+        "Create connections between components with a simple visual interface. Easily establish dependencies and data flow between different AI agents to define how they interact and collaborate within your workflow. This visual approach simplifies dependency creation and management, making it easy to design complex AI orchestrations.",
+      image: "/images/workflow3.png",
     },
     {
       title: "3. Configure & Customize",
       description:
-        "Set parameters and customize each component to fit your specific requirements.",
-      image:
-        "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=800&q=80",
-    },
-    {
-      title: "4. Deploy & Share",
-      description:
-        "Deploy your application with one click and share it with your team or users.",
-      image:
-        "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&q=80",
+        "Fine-tune each component to match your exact needs and use cases. Set parameters like API keys, model selection, chunk size, embedding context length, and other advanced options. Our intuitive interface gives you granular control over every aspect of your AI workflow, from tweaking model parameters to adjusting data processing options, ensuring optimal performance for your specific requirements.",
+      image: "/images/customise.png",
     },
   ],
 }: HowItWorksSectionProps) => {
   return (
-    <section className="py-20 px-6 md:px-12 bg-gradient-to-br from-purple-900/10 to-pink-500/10">
+    <section className="py-20 px-6 md:px-12 bg-gradient-to-r from-purple-900 via-pink-800 to-purple-900">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <motion.h2
@@ -78,18 +68,19 @@ const HowItWorksSection = ({
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1 * index }}
             >
-              <div className="md:w-1/2">
+              <div className="md:w-1/3">
                 <h3 className="text-2xl font-bold text-white mb-4">
                   {step.title}
                 </h3>
                 <p className="text-gray-300 text-lg">{step.description}</p>
               </div>
-              <div className="md:w-1/2 rounded-xl overflow-hidden border border-purple-500/20 shadow-lg shadow-purple-500/10">
+              <div className="md:w-2/3 rounded-xl overflow-hidden border border-purple-500/20 shadow-lg shadow-purple-500/10">
                 {step.image && (
                   <img
                     src={step.image}
                     alt={step.title}
                     className="w-full h-auto object-cover aspect-video"
+                    style={{ maxHeight: "600px" }}
                   />
                 )}
               </div>
