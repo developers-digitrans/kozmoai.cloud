@@ -108,7 +108,7 @@ const IntroductionSection = ({
               <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-pink-500 rounded-lg blur opacity-30"></div>
               <div className="relative bg-[#121212] p-6 rounded-lg border border-purple-500/20">
                 <h3 className="text-xl font-semibold text-white mb-4">
-                  Visual Flow Builder
+                  Intuitive Interface
                 </h3>
                 <p className="text-gray-300 mb-6">
                   KozmoAI's intuitive drag-and-drop interface allows you to
@@ -117,9 +117,12 @@ const IntroductionSection = ({
                   applications in minutes, not days.
                 </p>
                 <div className="rounded-lg overflow-hidden border border-purple-500/20 shadow-lg shadow-purple-500/10">
-                  <img
-                    src="/images/agant.png"
-                    alt="KozmoAI Visual Flow Builder"
+                  <video
+                    src="/videos/build.mov"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
                     className="w-full h-auto"
                   />
                 </div>

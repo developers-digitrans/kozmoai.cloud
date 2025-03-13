@@ -113,7 +113,6 @@ const HeroSection = ({
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 tracking-tight">
-            <div className="text-white">Stop fighting your tools</div>
             <div className="bg-gradient-to-r from-purple-400 via-pink-500 to-purple-600 bg-clip-text text-transparent">
               KozmoAI transforms the way you iterate and deploy AI workflows
             </div>
@@ -140,15 +139,6 @@ const HeroSection = ({
               <TypewriterEffect text="Connect components together to create powerful AI workflows. Choose from hundreds of pre-built components or create your own custom ones to extend functionality." />
             </motion.p>
           </motion.div>
-
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-16">
-            <Button
-              onClick={primaryCta.onClick}
-              className="bg-[#9333EA] hover:bg-[#8829D9] text-white border-none px-8 py-6 h-auto text-lg rounded-lg w-44 shadow-lg shadow-purple-900/30 transition-all duration-300 hover:shadow-purple-900/50"
-            >
-              Get Started
-            </Button>
-          </div>
         </motion.div>
 
         {/* Workflow Image Card - Centered and larger */}
