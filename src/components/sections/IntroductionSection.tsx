@@ -1,5 +1,5 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useEffect, useRef } from "react";
+import { motion, useInView, useAnimation } from "framer-motion";
 import { Button } from "@/components/ui/button";
 
 interface IntroductionSectionProps {
@@ -126,6 +126,454 @@ const IntroductionSection = ({
                     className="w-full h-auto"
                   />
                 </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* AI Agent Evolution Section */}
+          <motion.div
+            className="mb-20"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+          >
+            <h3 className="text-2xl font-semibold text-white mb-8 text-center bg-gradient-to-r from-purple-400 via-pink-500 to-purple-600 bg-clip-text text-transparent">
+              The Evolution from Basic LLMs to Advanced AI Agents
+            </h3>
+            <p className="text-gray-300 text-lg mb-10 text-center max-w-4xl mx-auto">
+              Understanding the development pathway from basic LLMs to
+              fully-fledged AI Agents is crucial for building effective AI
+              solutions. KozmoAI helps you navigate this journey with ease.
+            </p>
+
+            {/* Timeline Container */}
+            <div className="relative max-w-6xl mx-auto mb-12">
+              {/* Timeline Line */}
+              <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-purple-600 to-pink-500"></div>
+
+              {/* Phase 1 */}
+              <motion.div
+                className="relative mb-24"
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 0.1 }}
+              >
+                {/* Timeline Node */}
+                <div className="absolute left-1/2 transform -translate-x-1/2 -top-5 w-10 h-10 rounded-full bg-purple-600 border-4 border-black flex items-center justify-center z-10">
+                  <span className="text-white font-bold">1</span>
+                </div>
+
+                {/* Content Card - Left Side */}
+                <div className="ml-0 mr-auto md:ml-0 md:mr-[calc(50%+2rem)] md:pr-8 w-full md:w-[calc(50%-2rem)]">
+                  <motion.div
+                    className="bg-gradient-to-br from-purple-900/20 to-purple-500/10 rounded-xl border border-purple-500/30 p-6 hover:shadow-lg hover:shadow-purple-500/10 transition-all duration-300"
+                    whileHover={{
+                      y: -5,
+                      boxShadow: "0 20px 25px -5px rgba(139, 92, 246, 0.2)",
+                    }}
+                  >
+                    <div className="flex items-center mb-4">
+                      <div className="w-10 h-10 rounded-full bg-purple-600/30 flex items-center justify-center mr-3">
+                        <span className="text-white font-bold">1</span>
+                      </div>
+                      <h4 className="text-xl font-semibold text-white">
+                        The Foundation - Basic LLM
+                      </h4>
+                    </div>
+                    <ul className="text-gray-300 space-y-2 pl-4">
+                      <li className="flex items-start">
+                        <span className="text-purple-400 mr-2">•</span>
+                        <span>
+                          Simple workflow: Input (Text) → LLM → Output (Text)
+                        </span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-purple-400 mr-2">•</span>
+                        <span>
+                          Transformer-based architecture trained on vast
+                          datasets
+                        </span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-purple-400 mr-2">•</span>
+                        <span>
+                          Limited to text processing within context window
+                        </span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-purple-400 mr-2">•</span>
+                        <span>No external tools or memory capabilities</span>
+                      </li>
+                    </ul>
+                    <div className="mt-4 h-40 bg-[#0A0A0A] rounded-lg flex items-center justify-center overflow-hidden">
+                      <img
+                        src="https://images.unsplash.com/photo-1655720828018-edd2daec9349?w=600&q=80"
+                        alt="Basic LLM Architecture"
+                        className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-300"
+                      />
+                    </div>
+                  </motion.div>
+                </div>
+              </motion.div>
+
+              {/* Phase 2 */}
+              <motion.div
+                className="relative mb-24"
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 0.3 }}
+              >
+                {/* Timeline Node */}
+                <div className="absolute left-1/2 transform -translate-x-1/2 -top-5 w-10 h-10 rounded-full bg-purple-600 border-4 border-black flex items-center justify-center z-10">
+                  <span className="text-white font-bold">2</span>
+                </div>
+
+                {/* Content Card - Right Side */}
+                <div className="ml-auto mr-0 md:ml-[calc(50%+2rem)] md:pl-8 w-full md:w-[calc(50%-2rem)]">
+                  <motion.div
+                    className="bg-gradient-to-br from-purple-900/20 to-purple-500/10 rounded-xl border border-purple-500/30 p-6 hover:shadow-lg hover:shadow-purple-500/10 transition-all duration-300"
+                    whileHover={{
+                      y: -5,
+                      boxShadow: "0 20px 25px -5px rgba(139, 92, 246, 0.2)",
+                    }}
+                  >
+                    <div className="flex items-center mb-4">
+                      <div className="w-10 h-10 rounded-full bg-purple-600/30 flex items-center justify-center mr-3">
+                        <span className="text-white font-bold">2</span>
+                      </div>
+                      <h4 className="text-xl font-semibold text-white">
+                        Document Processing Capabilities
+                      </h4>
+                    </div>
+                    <ul className="text-gray-300 space-y-2 pl-4">
+                      <li className="flex items-start">
+                        <span className="text-purple-400 mr-2">•</span>
+                        <span>
+                          Enhanced workflow: Input (Text/Documents) → LLM →
+                          Output
+                        </span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-purple-400 mr-2">•</span>
+                        <span>
+                          Expanded context window for processing larger
+                          documents
+                        </span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-purple-400 mr-2">•</span>
+                        <span>
+                          Improved tokenization for handling structured content
+                        </span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-purple-400 mr-2">•</span>
+                        <span>
+                          Limited by static knowledge from training data
+                        </span>
+                      </li>
+                    </ul>
+                    <div className="mt-4 h-40 bg-[#0A0A0A] rounded-lg flex items-center justify-center overflow-hidden">
+                      <img
+                        src="https://images.unsplash.com/photo-1633356122102-3fe601e05bd2?w=600&q=80"
+                        alt="Document Processing"
+                        className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-300"
+                      />
+                    </div>
+                  </motion.div>
+                </div>
+              </motion.div>
+
+              {/* Phase 3 */}
+              <motion.div
+                className="relative mb-24"
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 0.5 }}
+              >
+                {/* Timeline Node */}
+                <div className="absolute left-1/2 transform -translate-x-1/2 -top-5 w-10 h-10 rounded-full bg-purple-600 border-4 border-black flex items-center justify-center z-10">
+                  <span className="text-white font-bold">3</span>
+                </div>
+
+                {/* Content Card - Left Side */}
+                <div className="ml-0 mr-auto md:ml-0 md:mr-[calc(50%+2rem)] md:pr-8 w-full md:w-[calc(50%-2rem)]">
+                  <motion.div
+                    className="bg-gradient-to-br from-purple-900/20 to-purple-500/10 rounded-xl border border-purple-500/30 p-6 hover:shadow-lg hover:shadow-purple-500/10 transition-all duration-300"
+                    whileHover={{
+                      y: -5,
+                      boxShadow: "0 20px 25px -5px rgba(139, 92, 246, 0.2)",
+                    }}
+                  >
+                    <div className="flex items-center mb-4">
+                      <div className="w-10 h-10 rounded-full bg-purple-600/30 flex items-center justify-center mr-3">
+                        <span className="text-white font-bold">3</span>
+                      </div>
+                      <h4 className="text-xl font-semibold text-white">
+                        RAGs and Tool Integration
+                      </h4>
+                    </div>
+                    <ul className="text-gray-300 space-y-2 pl-4">
+                      <li className="flex items-start">
+                        <span className="text-purple-400 mr-2">•</span>
+                        <span>Enable access to up-to-date information</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-purple-400 mr-2">•</span>
+                        <span>Supplement LLM knowledge with external data</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-purple-400 mr-2">•</span>
+                        <span>
+                          Improve factual accuracy and reduce hallucinations
+                        </span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-purple-400 mr-2">•</span>
+                        <span>
+                          Support specialized operations through API calls
+                        </span>
+                      </li>
+                    </ul>
+                    <div className="mt-4 h-40 bg-[#0A0A0A] rounded-lg flex items-center justify-center overflow-hidden">
+                      <img
+                        src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=600&q=80"
+                        alt="RAG Architecture"
+                        className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-300"
+                      />
+                    </div>
+                  </motion.div>
+                </div>
+              </motion.div>
+
+              {/* Phase 4 */}
+              <motion.div
+                className="relative mb-24"
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 0.7 }}
+              >
+                {/* Timeline Node */}
+                <div className="absolute left-1/2 transform -translate-x-1/2 -top-5 w-10 h-10 rounded-full bg-pink-600 border-4 border-black flex items-center justify-center z-10">
+                  <span className="text-white font-bold">4</span>
+                </div>
+
+                {/* Content Card - Right Side */}
+                <div className="ml-auto mr-0 md:ml-[calc(50%+2rem)] md:pl-8 w-full md:w-[calc(50%-2rem)]">
+                  <motion.div
+                    className="bg-gradient-to-br from-pink-600/20 to-purple-500/20 rounded-xl border border-pink-500/30 p-6 hover:shadow-lg hover:shadow-pink-500/10 transition-all duration-300"
+                    whileHover={{
+                      y: -5,
+                      boxShadow: "0 20px 25px -5px rgba(236, 72, 153, 0.2)",
+                    }}
+                  >
+                    <div className="flex items-center mb-4">
+                      <div className="w-10 h-10 rounded-full bg-pink-600/30 flex items-center justify-center mr-3">
+                        <span className="text-white font-bold">4</span>
+                      </div>
+                      <h4 className="text-xl font-semibold text-white">
+                        Integrating Memory Systems
+                      </h4>
+                    </div>
+                    <ul className="text-gray-300 space-y-2 pl-4">
+                      <li className="flex items-start">
+                        <span className="text-pink-400 mr-2">•</span>
+                        <span>Maintain context across interactions</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-pink-400 mr-2">•</span>
+                        <span>
+                          Enable personalization based on past exchanges
+                        </span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-pink-400 mr-2">•</span>
+                        <span>Store and retrieve relevant information</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-pink-400 mr-2">•</span>
+                        <span>
+                          Support long-running tasks and conversations
+                        </span>
+                      </li>
+                    </ul>
+                    <div className="mt-4 h-40 bg-[#0A0A0A] rounded-lg flex items-center justify-center overflow-hidden">
+                      <img
+                        src="https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?w=600&q=80"
+                        alt="Memory Systems"
+                        className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-300"
+                      />
+                    </div>
+                  </motion.div>
+                </div>
+              </motion.div>
+
+              {/* Phase 5 */}
+              <motion.div
+                className="relative mb-24"
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 0.9 }}
+              >
+                {/* Timeline Node */}
+                <div className="absolute left-1/2 transform -translate-x-1/2 -top-5 w-10 h-10 rounded-full bg-pink-600 border-4 border-black flex items-center justify-center z-10">
+                  <span className="text-white font-bold">5</span>
+                </div>
+
+                {/* Content Card - Left Side */}
+                <div className="ml-0 mr-auto md:ml-0 md:mr-[calc(50%+2rem)] md:pr-8 w-full md:w-[calc(50%-2rem)]">
+                  <motion.div
+                    className="bg-gradient-to-br from-pink-600/20 to-purple-500/20 rounded-xl border border-pink-500/30 p-6 hover:shadow-lg hover:shadow-pink-500/10 transition-all duration-300"
+                    whileHover={{
+                      y: -5,
+                      boxShadow: "0 20px 25px -5px rgba(236, 72, 153, 0.2)",
+                    }}
+                  >
+                    <div className="flex items-center mb-4">
+                      <div className="w-10 h-10 rounded-full bg-pink-600/30 flex items-center justify-center mr-3">
+                        <span className="text-white font-bold">5</span>
+                      </div>
+                      <h4 className="text-xl font-semibold text-white">
+                        Multi-Modal Processing
+                      </h4>
+                    </div>
+                    <ul className="text-gray-300 space-y-2 pl-4">
+                      <li className="flex items-start">
+                        <span className="text-pink-400 mr-2">•</span>
+                        <span>
+                          Handling diverse input types (text, images, tables)
+                        </span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-pink-400 mr-2">•</span>
+                        <span>Generating varied output formats</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-pink-400 mr-2">•</span>
+                        <span>Creating more comprehensive understanding</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-pink-400 mr-2">•</span>
+                        <span>Enabling richer information exchange</span>
+                      </li>
+                    </ul>
+                    <div className="mt-4 h-40 bg-[#0A0A0A] rounded-lg flex items-center justify-center overflow-hidden">
+                      <img
+                        src="https://images.unsplash.com/photo-1677442135136-760c813028c0?w=600&q=80"
+                        alt="Multi-Modal Processing"
+                        className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-300"
+                      />
+                    </div>
+                  </motion.div>
+                </div>
+              </motion.div>
+
+              {/* Phase 6 */}
+              <motion.div
+                className="relative mb-12"
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 1.1 }}
+              >
+                {/* Timeline Node */}
+                <div className="absolute left-1/2 transform -translate-x-1/2 -top-5 w-10 h-10 rounded-full bg-pink-600 border-4 border-black flex items-center justify-center z-10">
+                  <span className="text-white font-bold">6</span>
+                </div>
+
+                {/* Content Card - Right Side */}
+                <div className="ml-auto mr-0 md:ml-[calc(50%+2rem)] md:pl-8 w-full md:w-[calc(50%-2rem)]">
+                  <motion.div
+                    className="bg-gradient-to-br from-pink-600/20 to-purple-500/20 rounded-xl border border-pink-500/30 p-6 hover:shadow-lg hover:shadow-pink-500/10 transition-all duration-300"
+                    whileHover={{
+                      y: -5,
+                      boxShadow: "0 20px 25px -5px rgba(236, 72, 153, 0.2)",
+                    }}
+                  >
+                    <div className="flex items-center mb-4">
+                      <div className="w-10 h-10 rounded-full bg-pink-600/30 flex items-center justify-center mr-3">
+                        <span className="text-white font-bold">6</span>
+                      </div>
+                      <h4 className="text-xl font-semibold text-white">
+                        AI Agent Architecture
+                      </h4>
+                    </div>
+                    <ul className="text-gray-300 space-y-2 pl-4">
+                      <li className="flex items-start">
+                        <span className="text-pink-400 mr-2">•</span>
+                        <span>
+                          Chain-of-thought processing for complex problems
+                        </span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-pink-400 mr-2">•</span>
+                        <span>Step-by-step evaluation of solutions</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-pink-400 mr-2">•</span>
+                        <span>Dynamic tool selection based on tasks</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-pink-400 mr-2">•</span>
+                        <span>
+                          Goal-oriented execution with self-correction
+                        </span>
+                      </li>
+                    </ul>
+                    <div className="mt-4 h-40 bg-[#0A0A0A] rounded-lg flex items-center justify-center overflow-hidden">
+                      <img
+                        src="https://images.unsplash.com/photo-1581089781785-603411fa81e5?w=600&q=80"
+                        alt="AI Agent Architecture"
+                        className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-300"
+                      />
+                    </div>
+                  </motion.div>
+                </div>
+              </motion.div>
+
+              {/* Timeline End Node */}
+              <motion.div
+                className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full bg-gradient-to-r from-purple-600 to-pink-500 glow-effect"
+                initial={{ scale: 0 }}
+                animate={{ scale: [0, 1.2, 1] }}
+                transition={{ duration: 1, delay: 1.3 }}
+              />
+            </div>
+
+            {/* KozmoAI Capabilities */}
+            <div className="bg-gradient-to-br from-purple-900/30 to-pink-500/30 rounded-xl border border-purple-500/30 p-8 mt-12">
+              <h4 className="text-2xl font-bold text-white mb-6 text-center">
+                KozmoAI: Building Phase 6 AI Agent Architecture with No Hassle
+              </h4>
+
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-4 mt-8">
+                {[
+                  { icon: "🧠", text: "Strong Foundation LLM" },
+                  { icon: "🔄", text: "Effective RAG Implementation" },
+                  { icon: "🛠️", text: "Versatile Tool Use Integration" },
+                  { icon: "💾", text: "Contextual Memory Systems" },
+                  { icon: "🖼️", text: "Multi-Modal Processing" },
+                  { icon: "🔍", text: "Self-Monitoring Capabilities" },
+                  { icon: "🔒", text: "Safety Systems" },
+                ].map((capability, index) => (
+                  <div
+                    key={index}
+                    className="bg-[#111111] rounded-lg border border-purple-500/20 p-4 flex flex-col items-center text-center hover:border-purple-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/10"
+                  >
+                    <div className="text-3xl mb-2">{capability.icon}</div>
+                    <div className="text-white text-sm">{capability.text}</div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-8 text-center">
+                <Button
+                  onClick={() =>
+                    window.open("https://app.kozmoai.cloud", "_blank")
+                  }
+                  className="bg-gradient-to-r from-purple-600 to-pink-500 hover:from-purple-700 hover:to-pink-600 text-white border-none shadow-lg shadow-purple-900/20 transition-all duration-300 hover:shadow-purple-900/30 rounded-lg px-8 py-6 text-lg"
+                >
+                  Start Building Advanced AI Agents
+                </Button>
               </div>
             </div>
           </motion.div>
