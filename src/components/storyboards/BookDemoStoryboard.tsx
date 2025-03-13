@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 export default function BookDemoStoryboard() {
   return (
-    <div className="bg-gradient-to-r from-purple-900 via-pink-800 to-purple-900 min-h-screen flex flex-col items-center justify-center p-8">
+    <div className="bg-black min-h-screen flex flex-col items-center justify-center p-8">
       <div className="max-w-3xl w-full bg-[#121212] p-8 rounded-xl border border-purple-500/20 shadow-lg">
         <h1 className="text-3xl font-bold text-white mb-6">
           Book a Demo Integration

@@ -38,7 +38,7 @@ const HowItWorksSection = ({
   ],
 }: HowItWorksSectionProps) => {
   return (
-    <section className="py-20 px-6 md:px-12 bg-gradient-to-r from-purple-900 via-pink-800 to-purple-900">
+    <section className="py-20 px-6 md:px-12 bg-black">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <motion.h2

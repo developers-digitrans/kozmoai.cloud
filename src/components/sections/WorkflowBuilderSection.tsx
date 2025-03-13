@@ -15,7 +15,7 @@ export default function WorkflowBuilderSection(
     "Don't let boilerplate code slow you down. Visual data flows, reusable components, and rapid iteration let you focus on creating AI magic.";
 
   return (
-    <section className="py-20 px-6 md:px-12 bg-gradient-to-r from-purple-900 via-pink-800 to-purple-900 relative z-20">
+    <section className="py-20 px-6 md:px-12 bg-black relative z-20">
       <div className="max-w-7xl mx-auto">
         {/* Main Heading */}
         <div className="mb-16">
@@ -37,34 +37,130 @@ export default function WorkflowBuilderSection(
           </motion.p>
         </div>
 
-        {/* YouTube Video Section */}
+        {/* Arcade Demo Section */}
         <div className="mb-20">
           <div className="max-w-5xl mx-auto">
             <div className="bg-[#111111] rounded-xl border border-purple-500/20 overflow-hidden shadow-lg shadow-purple-500/10">
-              <div className="bg-[#1A1A1A] p-3 border-b border-gray-800 flex items-center">
+              <div className="bg-[#1A1A1A] p-3 border-b border-gray-800 flex items-center justify-between">
                 <div className="flex space-x-2">
                   <div className="w-3 h-3 rounded-full bg-red-500"></div>
                   <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
                   <div className="w-3 h-3 rounded-full bg-green-500"></div>
                 </div>
+                <div className="text-gray-400 text-sm">Interactive Demo</div>
+                <div className="w-16"></div> {/* Empty div for spacing */}
               </div>
               <div
-                className="h-[600px] overflow-hidden rounded-b-xl cursor-pointer transition-all duration-300 transform hover:scale-105"
-                style={{ backgroundColor: "#0D1117" }}
+                className="h-[600px] overflow-hidden rounded-b-xl cursor-pointer transition-all duration-300 transform hover:scale-105 relative bg-gradient-to-br from-[#0D1117] to-[#1A1A1A] flex flex-col items-center justify-center"
                 onClick={() =>
                   window.open(
-                    "https://www.youtube.com/watch?v=z9TCq9UYOXk",
+                    "https://app.arcade.software/share/kozmoai-demo",
                     "_blank",
                   )
                 }
               >
-                <iframe
-                  src="https://www.youtube.com/embed/z9TCq9UYOXk?autoplay=0"
-                  title="YouTube video player"
-                  className="w-full h-full border-0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                ></iframe>
+                {/* Arcade Logo */}
+                <div className="absolute top-0 left-0 w-full h-full opacity-10 flex items-center justify-center pointer-events-none">
+                  <svg
+                    width="200"
+                    height="200"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M12 2L2 7L12 12L22 7L12 2Z"
+                      stroke="#9333EA"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <path
+                      d="M2 17L12 22L22 17"
+                      stroke="#9333EA"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <path
+                      d="M2 12L12 17L22 12"
+                      stroke="#9333EA"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </div>
+
+                {/* Content */}
+                <div className="z-10 text-center px-8">
+                  <div className="w-16 h-16 bg-purple-900/30 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <svg
+                      width="32"
+                      height="32"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M21 7.5V6.75C21 5.50736 19.9926 4.5 18.75 4.5H5.25C4.00736 4.5 3 5.50736 3 6.75V17.25C3 18.4926 4.00736 19.5 5.25 19.5H18.75C19.9926 19.5 21 18.4926 21 17.25V16.5"
+                        stroke="#9333EA"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                      <path
+                        d="M15 12L9 8.25V15.75L15 12Z"
+                        stroke="#9333EA"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-4">
+                    Interactive Product Demo
+                  </h3>
+                  <p className="text-gray-300 mb-8 max-w-lg">
+                    Experience KozmoAI's workflow builder with this interactive
+                    demo. Click through the interface and see how easy it is to
+                    create powerful AI workflows.
+                  </p>
+                  <div className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-purple-600 hover:bg-purple-700 transition-colors duration-300">
+                    <span>Launch Interactive Demo</span>
+                    <svg
+                      className="ml-2 -mr-1 w-5 h-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M14 5l7 7m0 0l-7 7m7-7H3"
+                      ></path>
+                    </svg>
+                  </div>
+                </div>
+
+                {/* Animated Elements */}
+                <div className="absolute bottom-6 right-6 animate-pulse">
+                  <div className="w-3 h-3 bg-purple-500 rounded-full"></div>
+                </div>
+                <div
+                  className="absolute top-12 left-12 animate-pulse"
+                  style={{ animationDelay: "0.5s" }}
+                >
+                  <div className="w-2 h-2 bg-pink-500 rounded-full"></div>
+                </div>
+                <div
+                  className="absolute top-1/4 right-1/4 animate-pulse"
+                  style={{ animationDelay: "1s" }}
+                >
+                  <div className="w-4 h-4 bg-blue-500 rounded-full"></div>
+                </div>
               </div>
             </div>
           </div>

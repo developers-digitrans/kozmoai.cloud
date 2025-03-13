@@ -10,7 +10,7 @@ function App() {
   return (
     <Suspense
       fallback={
-        <div className="w-full h-screen flex items-center justify-center bg-[#0B0B0B]">
+        <div className="w-full h-screen flex items-center justify-center bg-black">
           <div className="animate-pulse text-white text-xl">Loading...</div>
         </div>
       }

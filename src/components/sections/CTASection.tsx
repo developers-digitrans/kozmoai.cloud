@@ -28,7 +28,7 @@ const CTASection = ({
   },
 }: CTASectionProps) => {
   return (
-    <section className="py-20 px-6 md:px-12 bg-gradient-to-r from-purple-900 via-pink-800 to-purple-900 rounded-3xl mx-6 md:mx-12 my-20">
+    <section className="py-20 px-6 md:px-12 bg-black rounded-3xl mx-6 md:mx-12 my-20">
       <div className="max-w-4xl mx-auto text-center">
         <motion.h2
           className="text-3xl md:text-4xl font-bold text-white mb-6"

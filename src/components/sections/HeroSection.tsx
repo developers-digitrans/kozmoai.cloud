@@ -73,7 +73,7 @@ const HeroSection = ({
   },
 }: HeroSectionProps) => {
   return (
-    <section className="relative w-full min-h-[800px] flex items-center justify-center overflow-hidden bg-gradient-to-r from-purple-900 via-pink-800 to-purple-900 py-16">
+    <section className="relative w-full min-h-[800px] flex items-center justify-center overflow-hidden bg-black py-16">
       {/* Video Background */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <video
@@ -83,8 +83,13 @@ const HeroSection = ({
           muted
           playsInline
           preload="auto"
+          ref={(el) => {
+            if (el) {
+              el.playbackRate = 0.5; // Slow down the video to half speed
+            }
+          }}
         >
-          <source src="/videos/kozmo.mp4" type="video/mp4" />
+          <source src="/videos/ai.mp4" type="video/mp4" />
         </video>
         {/* Dark overlay for better text readability */}
         <div className="absolute inset-0 bg-[#0B0B0B]/70 z-10"></div>
@@ -96,22 +101,7 @@ const HeroSection = ({
         <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-pink-500/10 rounded-full filter blur-[100px] opacity-50"></div>
         <div className="absolute top-1/3 left-1/4 w-[300px] h-[300px] bg-blue-500/10 rounded-full filter blur-[80px] opacity-40"></div>
 
-        {/* Animated particles */}
-        <motion.div
-          className="absolute top-20 right-1/4 w-4 h-4 bg-purple-500 rounded-full opacity-20"
-          animate={{ y: [0, 100, 0], opacity: [0.2, 0.5, 0.2] }}
-          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-        />
-        <motion.div
-          className="absolute bottom-40 right-1/3 w-6 h-6 bg-pink-500 rounded-full opacity-20"
-          animate={{ y: [0, -120, 0], opacity: [0.2, 0.4, 0.2] }}
-          transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
-        />
-        <motion.div
-          className="absolute top-1/2 left-1/3 w-5 h-5 bg-blue-500 rounded-full opacity-20"
-          animate={{ x: [0, 80, 0], opacity: [0.2, 0.5, 0.2] }}
-          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-        />
+        {/* Animated particles removed */}
       </div>
 
       {/* Content Container */}

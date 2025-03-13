@@ -116,11 +116,10 @@ const Blog = () => {
   };
 
   return (
-    <div className="w-screen min-h-screen bg-gradient-to-r from-purple-900 via-pink-800 to-purple-900 relative overflow-x-hidden">
+    <div className="w-screen min-h-screen bg-black relative overflow-x-hidden">
       {/* Background Effects */}
       <ParticleBackground
         colors={["#623CEA", "#A82DC1", "#BB86FC", "#C51162"]}
-        count={80}
       />
 
       {/* Content Container */}
@@ -384,7 +383,7 @@ const Blog = () => {
         </main>
 
         {/* Footer */}
-        <footer className="bg-gradient-to-r from-purple-900/80 via-pink-800/80 to-purple-900/80 border-t border-purple-400/20 py-12 px-6 md:px-12 relative z-20">
+        <footer className="bg-black border-t border-purple-400/20 py-12 px-6 md:px-12 relative z-20">
           <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="md:col-span-1">
               <div className="text-white font-bold text-2xl mb-4">KozmoAI</div>
