@@ -4,7 +4,6 @@ import HeroSection from "./sections/HeroSection";
 import TrustedBySection from "./sections/TrustedBySection";
 import WorkflowBuilderSection from "./sections/WorkflowBuilderSection";
 import FeaturesSection from "./sections/FeaturesSection";
-import HowItWorksSection from "./sections/HowItWorksSection";
 import UseCasesSection from "./sections/UseCasesSection";
 import ComparisonSection from "./sections/ComparisonSection";
 import FAQSection from "./sections/FAQSection";
@@ -71,22 +70,16 @@ function Home() {
             }}
           />
 
+          {/* Workflow Builder Section */}
+          <WorkflowBuilderSection />
+
           {/* Introduction Section */}
           <IntroductionSection />
-
-          {/* Workflow Builder Section - Added after TrustedBySection */}
-          <WorkflowBuilderSection />
 
           {/* Features Section */}
           <FeaturesSection
             title="Powerful Features"
             subtitle="Everything you need to build and deploy LLM applications"
-          />
-
-          {/* How It Works Section */}
-          <HowItWorksSection
-            title="How It Works"
-            subtitle="Build powerful LLM applications in just a few steps"
           />
 
           {/* Use Cases Section */}

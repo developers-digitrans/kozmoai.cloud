@@ -14,8 +14,8 @@ interface FeaturesSectionProps {
 }
 
 const FeaturesSection = ({
-  title = "Powerful Features",
-  subtitle = "Everything you need to build and deploy LLM applications",
+  title = "Powerful AI Development Features",
+  subtitle = "Everything you need to build and deploy advanced AI applications",
   features = [
     {
       title: "Visual Builder",
@@ -34,6 +34,27 @@ const FeaturesSection = ({
             strokeLinejoin="round"
             strokeWidth={2}
             d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"
+          />
+        </svg>
+      ),
+    },
+    {
+      title: "Multi-Agent Orchestration",
+      description:
+        "Coordinate multiple AI agents to work together on complex tasks, leveraging the strengths of different models and approaches.",
+      icon: (
+        <svg
+          className="w-10 h-10 text-purple-500"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
           />
         </svg>
       ),
@@ -60,9 +81,72 @@ const FeaturesSection = ({
       ),
     },
     {
-      title: "Customizable",
+      title: "RAG Applications",
       description:
-        "Extend and customize components to fit your specific needs and use cases.",
+        "Build powerful Retrieval Augmented Generation applications that combine the strengths of large language models with your own data sources.",
+      icon: (
+        <svg
+          className="w-10 h-10 text-purple-500"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M8 16l2.879-2.879m0 0a3 3 0 104.243-4.242 3 3 0 00-4.243 4.242zM21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+          />
+        </svg>
+      ),
+    },
+    {
+      title: "Real-time Collaboration",
+      description:
+        "Work together with your team in real-time to build and refine your AI workflows with shared projects and version control.",
+      icon: (
+        <svg
+          className="w-10 h-10 text-purple-500"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+          />
+        </svg>
+      ),
+    },
+    {
+      title: "Real-time Data Processing",
+      description:
+        "Process and analyze data in real-time, enabling your AI applications to respond quickly to changing conditions and new information.",
+      icon: (
+        <svg
+          className="w-10 h-10 text-purple-500"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M13 10V3L4 14h7v7l9-11h-7z"
+          />
+        </svg>
+      ),
+    },
+    {
+      title: "Customizable Components",
+      description:
+        "Extend and customize components to fit your specific needs and use cases, with full control over your AI workflows.",
       icon: (
         <svg
           className="w-10 h-10 text-purple-500"
@@ -83,7 +167,7 @@ const FeaturesSection = ({
     {
       title: "API Integration",
       description:
-        "Easily integrate with external APIs and services to enhance your LLM applications.",
+        "Easily integrate with external APIs and services to enhance your AI applications with additional capabilities and data sources.",
       icon: (
         <svg
           className="w-10 h-10 text-purple-500"
@@ -97,48 +181,6 @@ const FeaturesSection = ({
             strokeLinejoin="round"
             strokeWidth={2}
             d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-          />
-        </svg>
-      ),
-    },
-    {
-      title: "Real-time Collaboration",
-      description:
-        "Work together with your team in real-time to build and refine your LLM workflows.",
-      icon: (
-        <svg
-          className="w-10 h-10 text-purple-500"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-          />
-        </svg>
-      ),
-    },
-    {
-      title: "Version Control",
-      description:
-        "Keep track of changes and roll back to previous versions of your workflows when needed.",
-      icon: (
-        <svg
-          className="w-10 h-10 text-purple-500"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
           />
         </svg>
       ),

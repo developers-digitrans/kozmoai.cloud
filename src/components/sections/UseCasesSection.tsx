@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 interface UseCase {
   title: string;
@@ -145,6 +146,24 @@ const UseCasesSection = ({
     },
   ],
 }: UseCasesSectionProps) => {
+  const navigate = useNavigate();
+
+  const handleUseCaseClick = (title: string) => {
+    if (title === "Conversational AI") {
+      navigate("/conversational-ai");
+    } else if (title === "Content Generation") {
+      navigate("/content-generation");
+    } else if (title === "Data Analysis") {
+      navigate("/data-analysis");
+    } else if (title === "Knowledge Management") {
+      navigate("/knowledge-management");
+    } else if (title === "Customer Support") {
+      navigate("/customer-support");
+    } else if (title === "Research & Development") {
+      navigate("/research-and-development");
+    }
+  };
+
   return (
     <section className="py-20 px-6 md:px-12 bg-black">
       <div className="max-w-7xl mx-auto">
@@ -171,11 +190,12 @@ const UseCasesSection = ({
           {useCases.map((useCase, index) => (
             <motion.div
               key={index}
-              className="bg-[#111111] p-8 rounded-xl border border-purple-500/20 hover:border-purple-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/10"
+              className="bg-[#111111] p-8 rounded-xl border border-purple-500/20 hover:border-purple-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/10 cursor-pointer"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 * index }}
               whileHover={{ y: -5 }}
+              onClick={() => handleUseCaseClick(useCase.title)}
             >
               <div className="mb-5">{useCase.icon}</div>
               <h3 className="text-xl font-semibold text-white mb-3">
